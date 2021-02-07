@@ -29,13 +29,10 @@ public class TeamController {
   }
 
   // PUT /team/{{id}}/agent - Assigns an agent to the specified team
-  @PutMapping("team/{{id}}/agent")
+  @PutMapping("team/{id}/agent")
   public ResponseEntity<?> assignAgentToATeam(
-      @PathVariable String agentIdNumber, @RequestBody Team team) {
-    team.setAgent(
-        Optional.ofNullable(teamService.findByAgentIdNumber(agentIdNumber))
-            .map(Team::getAgent)
-            .orElse(null));
+      @PathVariable Long id, @RequestBody Team team) {
+    team.setAgent(teamService.findByAgentId(id));
     return ResponseEntity.ok(teamService.save(team));
   }
 }

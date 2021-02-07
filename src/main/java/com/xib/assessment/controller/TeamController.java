@@ -1,17 +1,17 @@
 package com.xib.assessment.controller;
 
 import com.xib.assessment.model.Team;
+import com.xib.assessment.service.AgentService;
 import com.xib.assessment.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 public class TeamController {
 
   @Autowired private TeamService teamService;
+  @Autowired private AgentService agentService;
 
   @GetMapping("teams")
   public ResponseEntity<?> getAllTeams() {
@@ -30,9 +30,8 @@ public class TeamController {
 
   // PUT /team/{{id}}/agent - Assigns an agent to the specified team
   @PutMapping("team/{id}/agent")
-  public ResponseEntity<?> assignAgentToATeam(
-      @PathVariable Long id, @RequestBody Team team) {
-    team.setAgent(teamService.findByAgentId(id));
+  public ResponseEntity<?> assignAgentToATeam(@PathVariable Long id, @RequestBody Team team) {
+    team.setAgent(agentService.findAgentById(id).orElse(null));
     return ResponseEntity.ok(teamService.save(team));
   }
 }

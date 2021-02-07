@@ -21,7 +21,7 @@ public class TeamManagerServiceImpl implements TeamManagerService {
 
   @Override
   public ResponseEntity<?> findByTeamAndManager(Long teamId, Long managerId) {
-    return ResponseEntity.ok(teamManagerRepository.findByTeamAndManager(teamId, managerId));
+    return ResponseEntity.ok(teamManagerRepository.findByTeamIdAndManagerId(teamId, managerId));
   }
 
 }

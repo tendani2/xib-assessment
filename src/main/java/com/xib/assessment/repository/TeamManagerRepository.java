@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TeamManagerRepository extends JpaRepository<TeamManager, Long> {
-  TeamManager findByTeamAndManager(Long teamId, Long managerId);
+  TeamManager findByTeamIdAndManagerId(Long teamId, Long managerId);
 }

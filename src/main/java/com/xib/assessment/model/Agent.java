@@ -21,8 +21,8 @@ public class Agent {
   @Column(name = "idnumber")
   private String idNumber;
 
- /* // An agent can only be assigned to a team that is managed by the same manager he reports to.
-  @ManyToOne(fetch = FetchType.EAGER)
+  // An agent can only be assigned to a team that is managed by the same manager he reports to.
+  @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
   @JoinColumn(name = "team_id", referencedColumnName = "id")
-  private Team team;*/
+  private Team team;
 }

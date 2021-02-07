@@ -42,7 +42,7 @@ public class LoadTestData {
         a.setFirstName(firstName);
         a.setLastName(lastName);
         a.setIdNumber(idNumber);
-        //a.setTeam(team);
+        a.setTeam(team);
         return agentRepository.save(a);
     }
 }

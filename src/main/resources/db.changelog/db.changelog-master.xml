@@ -22,7 +22,9 @@
             firstname VARCHAR(255) NOT NULL,
             lastname VARCHAR(255) NOT NULL,
             idnumber BIGINT NOT NULL,
-            CONSTRAINT PK_agent_id PRIMARY KEY (id)
+            team_id BIGINT,
+            CONSTRAINT PK_agent_id PRIMARY KEY (id),
+            CONSTRAINT PK_team_id PRIMARY KEY (id)
             )
         </sql>
         <sql>

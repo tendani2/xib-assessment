@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,4 +22,7 @@ public class Manager implements Serializable {
 
   @Column(name = "idnumber")
   private String idNumber;
+
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "manager")
+  private Set<Team> teams;
 }

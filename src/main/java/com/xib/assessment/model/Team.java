@@ -20,4 +20,8 @@ public class Team implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "agent_id")
     private Agent agent;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "manager_id")
+    private Manager manager;
 }

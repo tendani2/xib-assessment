@@ -1,5 +1,9 @@
 package com.xib.assessment;
 
+import com.xib.assessment.model.Agent;
+import com.xib.assessment.model.Team;
+import com.xib.assessment.repository.AgentRepository;
+import com.xib.assessment.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,10 +13,10 @@ import javax.transaction.Transactional;
 @Component
 public class LoadTestData {
     @Autowired
-    AgentRepository agentRepository;
+    private AgentRepository agentRepository;
 
     @Autowired
-    TeamRepository teamRepository;
+    private TeamRepository teamRepository;
 
     @PostConstruct
     @Transactional
@@ -38,7 +42,7 @@ public class LoadTestData {
         a.setFirstName(firstName);
         a.setLastName(lastName);
         a.setIdNumber(idNumber);
-        a.setTeam(team);
+        //a.setTeam(team);
         return agentRepository.save(a);
     }
 }

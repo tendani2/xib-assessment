@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Table(name = "team_Manager")
 public class TeamManager implements Serializable {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

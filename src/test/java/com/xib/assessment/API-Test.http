@@ -1,0 +1,71 @@
+### Send POST request with json body
+PUT http://localhost:8080/team/1/agent
+Content-Type: application/json
+
+{
+  "name": "tendani"
+}
+
+###
+GET http://localhost:8080/teams
+Content-Type: application/x-www-form-urlencoded
+
+
+###
+GET http://localhost:8080/agents
+Content-Type: application/json
+
+###########
+GET http://localhost:8080/team/1
+Content-Type: application/json
+
+###########
+GET http://localhost:8080/agent/1
+Content-Type: application/json
+
+###########
+GET http://localhost:8080/team/managers
+Content-Type: application/json
+
+###########
+
+POST http://localhost:8080/team
+Content-Type: application/json
+
+{
+  "name": "team testing",
+  "Agent": {
+    "firstName": "t1",
+    "lastName": "t1",
+    "idNumber": "1212"
+  }
+}
+###########
+POST http://localhost:8080/agent
+Content-Type: application/json
+
+{
+  "firstName": "t1",
+  "lastName": "t1",
+  "idNumber": "1212"
+}
+
+###########
+POST http://localhost:8080/manager
+Content-Type: application/json
+
+{
+  "manager": {
+    "firstName": "t1",
+    "lastName": "t1",
+    "idNumber": "1212"
+  },
+  "team": {
+    "name": "t2",
+    "agent": {
+      "firstName": "t11",
+      "lastName": "t11",
+      "idNumber": "12112"
+    }
+  }
+}

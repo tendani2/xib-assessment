@@ -17,7 +17,7 @@ public class Team implements Serializable {
     private String name;
 
     // One team can be managed by at most 2 managers.
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "agent_id")
     private Agent agent;
 

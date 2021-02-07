@@ -4,8 +4,12 @@ import com.xib.assessment.model.TeamManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public interface TeamManagerService {
-  ResponseEntity<?> createManager(@RequestBody TeamManager teamManager);
+import java.util.List;
 
-  ResponseEntity<?> findByTeamAndManager(Long teamId, Long managerId);
+public interface TeamManagerService {
+  TeamManager createManager(@RequestBody TeamManager teamManager);
+
+  TeamManager findByTeamAndManager(Long teamId, Long managerId);
+
+  List<TeamManager> findAll();
 }

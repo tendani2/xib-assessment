@@ -16,9 +16,16 @@ public class TeamManagerController {
     return ResponseEntity.ok(teamManagerService.createManager(teamManager));
   }
 
-  // create an api endpoint that will return a list of all empty teams (i.e teams with no agents or managers)
+  // create an api endpoint that will return a list of all empty teams (i.e teams with no agents or
+  // managers)
   @GetMapping("team/{teamId}/{managerId}")
-  public ResponseEntity<?> findByTeamAndManager(@PathVariable Long teamId, @PathVariable Long managerId) {
+  public ResponseEntity<?> findByTeamAndManager(
+      @PathVariable Long teamId, @PathVariable Long managerId) {
     return ResponseEntity.ok(teamManagerService.findByTeamAndManager(teamId, managerId));
+  }
+
+  @GetMapping("team/managers")
+  public ResponseEntity<?> findAll() {
+    return ResponseEntity.ok(teamManagerService.findAll());
   }
 }

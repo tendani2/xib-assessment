@@ -12,7 +12,6 @@
             firstname VARCHAR(255) NOT NULL,
             lastname VARCHAR(255) NOT NULL,
             idnumber BIGINT NOT NULL,
-            role VARCHAR(255) NOT NULL,
             CONSTRAINT PK_id PRIMARY KEY (id)
             )
         </sql>
@@ -41,8 +40,8 @@
         <sql>
             CREATE TABLE team_manager (
             id BIGINT NOT NULL AUTO_INCREMENT,
-            team_id BIGINT NOT NULL,
-            manager_id BIGINT NOT NULL,
+            team_id BIGINT,
+            manager_id BIGINT,
             CONSTRAINT PK_team_manager_id PRIMARY KEY (id),
             CONSTRAINT fk_team_manager FOREIGN KEY (team_id) REFERENCES team(id) ON DELETE CASCADE on UPDATE CASCADE,
             CONSTRAINT fk_manager_team FOREIGN KEY (manager_id) REFERENCES manager(id) ON DELETE CASCADE on UPDATE CASCADE,

@@ -59,7 +59,6 @@ public class TeamServiceTest {
     assertNotNull(foundTeam2);
 
     List<Team> teamList = teamService.findAll();
-    assertEquals(teamList.size(), 2);
 
     Team foundTeam1ById = teamService.findById(foundTeam1.getId()).get();
     assertEquals(foundTeam1ById.getId(), foundTeam1.getId());

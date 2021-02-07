@@ -17,6 +17,103 @@ Content-Type: application/json
   }
 }
 
+<> 2021-02-08T010936.200.json
+
+###
+
+POST http://localhost:8080/team
+Content-Type: application/json
+
+{
+  "name": "team testing",
+  "Agent": {
+    "firstName": "t1",
+    "lastName": "t1",
+    "idNumber": "1212"
+  }
+}
+
+<> 2021-02-08T010931.200.json
+
+###
+
+GET http://localhost:8080/agent/1
+Content-Type: application/json
+
+<> 2021-02-08T010926.200.json
+
+###
+
+GET http://localhost:8080/team/1
+Content-Type: application/json
+
+<> 2021-02-08T010920.200.json
+
+###
+
+GET http://localhost:8080/agents
+Content-Type: application/json
+
+<> 2021-02-08T010916.200.json
+
+###
+
+GET http://localhost:8080/agents
+Content-Type: application/json
+
+<> 2021-02-08T010738.200.json
+
+###
+
+GET http://localhost:8080/agents
+Content-Type: application/json
+
+<> 2021-02-08T125924.200.json
+
+###
+
+GET http://localhost:8080/agents
+Content-Type: application/json
+
+<> 2021-02-08T125835.200.json
+
+###
+
+POST http://localhost:8080/team
+Content-Type: application/json
+
+{
+  "name": "team testing",
+  "Agent": {
+    "firstName": "t1",
+    "lastName": "t1",
+    "idNumber": "1212"
+  }
+}
+
+<> 2021-02-08T125727.200.json
+
+###
+
+POST http://localhost:8080/manager
+Content-Type: application/json
+
+{
+  "manager": {
+    "firstName": "t1",
+    "lastName": "t1",
+    "idNumber": "1212"
+  },
+  "team": {
+    "name": "t2",
+    "agent": {
+      "firstName": "t11",
+      "lastName": "t11",
+      "idNumber": "12112"
+    }
+  }
+}
+
 <> 2021-02-08T125626.200.json
 
 ###
@@ -463,123 +560,6 @@ Content-Type: application/json
 }
 
 <> 2021-02-07T114044.400.json
-
-###
-
-PUT http://localhost:8080/team?id=1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T114031.405.json
-
-###
-
-PUT http://localhost:8080/team/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T114004.400.json
-
-###
-
-PUT http://localhost:8080/team/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113652.400.json
-
-###
-
-PUT http://localhost:8080/team/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113450.500.json
-
-###
-
-PUT http://localhost:8080/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113419.404.json
-
-###
-
-PUT http://localhost:8080/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113345.404.json
-
-###
-
-PUT http://localhost:8080/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113325.404.json
-
-###
-
-PUT http://localhost:8080/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113203.404.json
-
-###
-
-PUT http://localhost:8080/1/agent
-Content-Type: application/json
-
-{
-  "firstName": "tendani",
-  "lastName": "Munyai",
-  "agentIdNumber": "124324324"
-}
-
-<> 2021-02-07T113146.404.json
 
 ###
 

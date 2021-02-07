@@ -1,13 +1,16 @@
 package com.xib.assessment.controller;
 
 import com.xib.assessment.model.Agent;
-import com.xib.assessment.model.Team;
+import com.xib.assessment.model.dto.AgentDto;
 import com.xib.assessment.service.AgentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class AgentController {
@@ -23,7 +26,19 @@ public class AgentController {
   // The agents identity number should no longer be returned in this request.
   @GetMapping("agents")
   public ResponseEntity<?> findAll(Pageable pageable) {
-    return new ResponseEntity<>(agentService.findAll(pageable), HttpStatus.OK);
+    List<AgentDto> agentList =
+        agentService.findAll(pageable).stream()
+            .map(this::buildAgentDto)
+            .collect(Collectors.toList());
+    return new ResponseEntity<>(agentList, HttpStatus.OK);
+  }
+
+  private AgentDto buildAgentDto(Agent agent) {
+    return AgentDto.builder()
+        .firstName(agent.getFirstName())
+        .lastName(agent.getLastName())
+        .team(agent.getTeam())
+        .build();
   }
 
   @PostMapping("agent")
